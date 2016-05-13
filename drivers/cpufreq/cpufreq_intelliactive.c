@@ -1,6 +1,10 @@
 /*
  * drivers/cpufreq/cpufreq_intelliactive.c
  *
+ *
+ *	Edited for Zenfone 2 Laser : Abhishek Ranjan(abhishekr700@gmail.com) 
+ *
+ *
  * Copyright (C) 2010 Google, Inc.
  * Copyright (C) 2014 Paul Reioux
  *
@@ -14,7 +18,6 @@
  * GNU General Public License for more details.
  *
  * Author: Mike Chan (mike@android.com)
- * Author: Paul Reioux (reioux@gmail.com) Modified for intelliactive
  */
 
 #include <linux/cpu.h>

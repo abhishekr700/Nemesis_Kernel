@@ -1,6 +1,11 @@
 /*
  * drivers/cpufreq/cpufreq_smartmax.c
  *
+ * 
+ *
+ *	Edited for Zenfone 2 Laser : Abhishek Ranjan(abhishekr700@gmail.com) 
+ *
+ *
  * Copyright (C) 2013 maxwen
  *
  * This program is free software; you can redistribute it and/or modify

@@ -1,6 +1,9 @@
 /*
  *  drivers/cpufreq/cpufreq_elementalx.c
  *
+ *	Edited for Zenfone 2 Laser : Abhishek Ranjan(abhishekr700@gmail.com) 
+ *
+ *
  *  Copyright (C)  2001 Russell King
  *            (C)  2003 Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>.
  *                      Jun Nakajima <jun.nakajima@intel.com>
@@ -766,7 +769,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 		if (cur_load > max_load_freq)
 			max_load_freq = cur_load * policy->cur;
 	}
-cpufreq_notify_utilization(policy, cur_load);
+//cpufreq_notify_utilization(policy, cur_load);
 	for_each_online_cpu(j) {
 		struct cpu_dbs_info_s *j_dbs_info;
 		j_dbs_info = &per_cpu(od_cpu_dbs_info, j);

@@ -1,6 +1,10 @@
 /*
  *  drivers/cpufreq/cpufreq_hyper.c
  *
+ *
+ *	Edited for Zenfone 2 Laser : Abhishek Ranjan(abhishekr700@gmail.com) 
+ *
+ *
  *  Copyright (C)  2001 Russell King
  *            (C)  2003 Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>.
  *                      Jun Nakajima <jun.nakajima@intel.com>
@@ -839,11 +843,11 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 		j_dbs_info->load_at_prev_sample = load_at_max_freq;
 	}
 
-	if (dbs_tuners_ins.sampling_rate < DEFAULT_SAMPLING_RATE)
+/*	if (dbs_tuners_ins.sampling_rate < DEFAULT_SAMPLING_RATE)
 		cpufreq_notify_utilization(policy, avg_load_at_max_freq);
 	else
 		cpufreq_notify_utilization(policy, load_at_max_freq);
-
+*/
 	/* Check for frequency increase */
 	if (policy->cur < dbs_tuners_ins.freq_responsiveness)
 			up_threshold = dbs_tuners_ins.up_threshold_min_freq;

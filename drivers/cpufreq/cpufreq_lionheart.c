@@ -1,7 +1,10 @@
 /*
  * drivers/cpufreq/cpufreq_lionheart.c
  *
- * Patched & tweaked: knzo
+ *
+ *	Edited for Zenfone 2 Laser : Abhishek Ranjan(abhishekr700@gmail.com) 
+ *
+ *
  *
  * Based on the Conservative governor by:
  *
@@ -42,7 +45,7 @@
 #include <linux/input.h>
 #include <linux/workqueue.h>
 #include <linux/slab.h>
-//#include <linux/earlysuspend.h>
+#include <linux/earlysuspend.h>
 
 #define DEF_FREQUENCY_UP_THRESHOLD		(99)
 #define DEF_FREQUENCY_DOWN_THRESHOLD		(40)
