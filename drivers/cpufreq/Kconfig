@@ -169,6 +169,13 @@ config CPU_FREQ_DEFAULT_GOV_SLIM
 	help
 	  Use the CPUFreq governor 'slim' as default.	
 
+config CPU_FREQ_DEFAULT_GOV_SMARTASSH3
+   	bool "smartassH3"
+   	select CPU_FREQ_GOV_SMARTASSH3
+   	help
+    	  Use the CPUFreq governor 'smartassH3' as default. 	
+
+
 config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	bool "interactive"
 	select CPU_FREQ_GOV_INTERACTIVE
@@ -309,6 +316,7 @@ config CPU_FREQ_GOV_INTERACTIVEX
 	help
 	   'interactiveX' - interactive governor with early suspend support added.
 	    This governor uses hotplug to shutdown and start up cpu1 when suspended.
+
 	    If in doubt, say N.  
 
 config CPU_FREQ_GOV_SLIM
@@ -332,6 +340,15 @@ config CPU_FREQ_GOV_YANKACTIVE
 	  The governor is based on interactive with just different default settings
 	  and can be achieved using interactive with a script. This is added for
 	  simplification purposes for myself.
+
+	    If in doubt, say N. 
+
+config CPU_FREQ_GOV_SMARTASSH3
+   	tristate "'smartassH3' cpufreq governor"
+   	depends on CPU_FREQ
+   	help
+     	'smartassH3' - a "smart" governor
+     
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
