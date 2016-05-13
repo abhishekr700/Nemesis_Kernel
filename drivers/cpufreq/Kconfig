@@ -144,7 +144,13 @@ config CPU_FREQ_DEFAULT_GOV_SMARTMAX
 	bool "smartmax"
 	select CPU_FREQ_GOV_SMARTMAX
 	help
-	  Use the CPUFreq governor 'smartmax' as default
+	  Use the CPUFreq governor 'smartmax' as default.
+
+config CPU_FREQ_DEFAULT_GOV_INTERACTIVEX
+  	bool "interactiveX"
+  	select CPU_FREQ_GOV_INTERACTIVEX
+  	help
+    	  Use the CPUFreq governor 'interactiveX' as default.	
 
 config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	bool "interactive"
@@ -279,6 +285,14 @@ config CPU_FREQ_GOV_SMARTMAX
   select CPU_FREQ_TABLE	
   help	
     'smartmax' combined ondemand and smartass2
+
+config CPU_FREQ_GOV_INTERACTIVEX
+	tristate "'interactiveX' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	   'interactiveX' - interactive governor with early suspend support added.
+	    This governor uses hotplug to shutdown and start up cpu1 when suspended.
+	    If in doubt, say N.    
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
