@@ -49,6 +49,10 @@
 int graphics_boost = 6;
 #endif
 
+#ifdef CONFIG_CPU_FREQ_GOV_SLIM
+int graphics_boost1 = 6;
+#endif
+
 /* Number of jiffies for a full thermal cycle */
 #define TH_HZ			(HZ/5)
 
@@ -299,6 +303,10 @@ void kgsl_pwrctrl_pwrlevel_change(struct kgsl_device *device,
 
 #ifdef CONFIG_CPU_FREQ_GOV_ELEMENTALX
         graphics_boost = pwr->active_pwrlevel;
+#endif
+
+#ifdef CONFIG_CPU_FREQ_GOV_SLIM
+        graphics_boost1 = pwr->active_pwrlevel;
 #endif
 
 }

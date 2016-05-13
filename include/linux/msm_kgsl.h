@@ -25,6 +25,10 @@
 extern int graphics_boost;
 #endif
 
+#ifdef CONFIG_CPU_FREQ_GOV_SLIM
+extern int graphics_boost1;
+#endif
+
 /**
  * struct kgsl_pwrlevel - Struct holding different pwrlevel info obtained from
  * from dtsi file
