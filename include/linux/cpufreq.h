@@ -160,6 +160,10 @@ static inline unsigned int cpufreq_quick_get_max(unsigned int cpu)
 }
 static inline void disable_cpufreq(void) { }
 #endif
+int lock_policy_rwsem_read(int cpu);
+int lock_policy_rwsem_write(int cpu);
+void unlock_policy_rwsem_read(int cpu);
+void unlock_policy_rwsem_write(int cpu);
 
 /*********************************************************************
  *                      CPUFREQ DRIVER INTERFACE                     *
@@ -206,7 +210,6 @@ __ATTR(_name, 0644, show_##_name, store_##_name)
 struct cpufreq_driver {
 	char			name[CPUFREQ_NAME_LEN];
 	u8			flags;
-
 	/* needed by all drivers */
 	int	(*init)		(struct cpufreq_policy *policy);
 	int	(*verify)	(struct cpufreq_policy *policy);
@@ -224,7 +227,8 @@ struct cpufreq_driver {
 
 	/* optional */
 	int	(*bios_limit)	(int cpu, unsigned int *limit);
-
+	 unsigned int (*getavg)  (struct cpufreq_policy *policy,
+                                  unsigned int cpu);
 	int	(*exit)		(struct cpufreq_policy *policy);
 	int	(*suspend)	(struct cpufreq_policy *policy);
 	int	(*resume)	(struct cpufreq_policy *policy);
@@ -408,6 +412,10 @@ int cpufreq_driver_target(struct cpufreq_policy *policy,
 int __cpufreq_driver_target(struct cpufreq_policy *policy,
 				   unsigned int target_freq,
 				   unsigned int relation);
+
+extern int __cpufreq_driver_getavg(struct cpufreq_policy *policy,
+                                    unsigned int cpu);
+
 int cpufreq_register_governor(struct cpufreq_governor *governor);
 void cpufreq_unregister_governor(struct cpufreq_governor *governor);
 
