@@ -173,7 +173,13 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASSH3
    	bool "smartassH3"
    	select CPU_FREQ_GOV_SMARTASSH3
    	help
-    	  Use the CPUFreq governor 'smartassH3' as default. 	
+    	  Use the CPUFreq governor 'smartassH3' as default. 
+
+config CPU_FREQ_DEFAULT_GOV_IMPULSE
+	bool "impulse"
+	select CPU_FREQ_GOV_IMPULSE
+	help
+	  Use the CPUFreq governor 'interactive' as default.	
 
 config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	bool "interactive"
@@ -347,7 +353,14 @@ config CPU_FREQ_GOV_SMARTASSH3
    	depends on CPU_FREQ
    	help
      	'smartassH3' - a "smart" governor
-     
+
+config CPU_FREQ_GOV_IMPULSE
+	tristate "'impulse' cpufreq policy governor"
+	help
+	  'impulse' - This driver adds a dynamic cpufreq policy governor
+	  designed for optimized balance between power and performance.
+
+	  If in doubt, say N.     
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
