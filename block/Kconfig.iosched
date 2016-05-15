@@ -61,6 +61,13 @@ config IOSCHED_FIOPS
           IOPS equally among all processes in the system. It's mainly for
           Flash based storage.  
 
+config IOSCHED_ZEN
+ 	tristate "Zen I/O scheduler"
+ 	default y
+ 	---help---
+ 	FCFS, dispatches are back-inserted, deadlines ensure fairness.
+         Should work best with devices where there is no travel delay.
+
 config IOSCHED_CFQ
 	tristate "CFQ I/O scheduler"
 	default y
@@ -147,6 +154,7 @@ config DEFAULT_IOSCHED
 	default "noop" if DEFAULT_NOOP
 	default "sio" if DEFAULT_SIO	
 	default "fiops" if DEFAULT_FIOPS
+	default "zen" if DEFAULT_ZEN
 
 endmenu
 
