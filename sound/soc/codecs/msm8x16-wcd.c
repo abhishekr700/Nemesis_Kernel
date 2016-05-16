@@ -1339,7 +1339,8 @@ unsigned int msm8x16_wcd_read(struct snd_soc_codec *codec,
 }
 #ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
 EXPORT_SYMBOL(msm8x16_wcd_read);
-static int msm8x16_wcd_codec_probe#endif
+#endif
+>>>>>>> 17e945f... Sound Control-Minor Edit
 
 static void msm8x16_wcd_boost_on(struct snd_soc_codec *codec)
 {
