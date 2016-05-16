@@ -1,0 +1,15 @@
+#                            NEMESIS FUSION KERNEL
+
+
+
+              Custom-Made Cyanogenmod based kernel for Zenfone 2 Laser[Z00L/Z00T]
+
+####Toolchain Used       :       Uber 4.9-kernel
+
+####Build Environment    :       Xubuntu 14.04-64bit
+
+####Based On             :       Cyanogenmod 13
+
+####Defconfig            :       nemesis_defconfig_Z00L/nemesis_defconfig_Z00T(arch/arm64/configs/)
+
+####Developer            :       abhishekr700
