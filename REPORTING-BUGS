@@ -1,7 +1,7 @@
 Background
 ==========
 
-The upstream Linux kernel maintainers only fix bugs for specific kernel
+The upstream  Linux kernel maintainers only fix bugs for specific kernel
 versions.  Those versions include the current "release candidate" (or -rc)
 kernel, any "stable" kernel versions, and any "long term" kernels.
 
