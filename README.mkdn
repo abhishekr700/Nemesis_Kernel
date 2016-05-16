@@ -12,4 +12,4 @@
 
 ####Defconfig            :       nemesis_defconfig_Z00L/nemesis_defconfig_Z00T(arch/arm64/configs/)
 
-####Developer            :       abhishekr700
+####Developer            :       abhishekr700(xda/gmail)
