@@ -2,7 +2,7 @@
 
 
 
-              Custom-Made Cyanogenmod based kernel for Zenfone 2 Laser[Z00L]
+              Custom-Made Cyanogenmod based kernel for Zenfone 2 Laser[Z00L / Z00T]
 
 ####Toolchain Used       :       Uber 4.9-kernel
 
@@ -10,6 +10,6 @@
 
 ####Based On             :       Cyanogenmod 13
 
-####Defconfig            :       nemesisZ00L_defconfig(arch/arm64/configs/)
+####Defconfig            :       nemesisZ00L_defconfig/nemesisZ00T_defconfig(arch/arm64/configs/)
 
 ####Developer            :       abhishekr700(xda/gmail)
