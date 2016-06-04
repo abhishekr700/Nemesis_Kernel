@@ -36,6 +36,8 @@
 #include <linux/moduleparam.h>
 #include <asm/cputime.h>
 #include <linux/earlysuspend.h>
+#include <linux/module.h>
+
 
 #define cputime64_sub(__a, __b)         ((__a) - (__b))
 void (*pm_idle)(void);
@@ -850,8 +852,8 @@ static int cpufreq_governor_smartass_h3(struct cpufreq_policy *new_policy,
 
 	return 0;
 }
-
-/*static void smartass_suspend(int cpu, int suspend)
+/*
+static void smartass_suspend(int cpu, int suspend)
 {
 	struct smartass_info_s *this_smartass = &per_cpu(smartass_info, smp_processor_id());
 	struct cpufreq_policy *policy = this_smartass->cur_policy;
@@ -882,24 +884,33 @@ static int cpufreq_governor_smartass_h3(struct cpufreq_policy *new_policy,
 	reset_timer(smp_processor_id(),this_smartass);
 }
 */
-/*static void smartass_early_suspend(struct early_suspend *handler) {
+
+//Unused-remove by abhishekr700
+/*
+static void smartass_early_suspend(struct early_suspend *handler) {
 	if (suspended || sleep_ideal_freq==0) // disable behavior for sleep_ideal_freq==0
 		return;
 	suspended = 1;
 }
 */
-/*static void smartass_late_resume(struct early_suspend *handler) {
+
+//Unused-remove by abhishekr700
+/*
+static void smartass_late_resume(struct early_suspend *handler) {
 	if (!suspended) // already not suspended so nothing to do
 		return;
 	suspended = 0;
 }
 */
-/*static struct early_suspend smartass_power_suspend = {
+
+
+//Unused-remove by abhishekr700
+/*tatic struct early_suspend smartass_power_suspend = {
 	.suspend = smartass_early_suspend,
 	.resume = smartass_late_resume,
 	.level = EARLY_SUSPEND_LEVEL_DISABLE_FB + 1,
-};
-*/
+};*/
+
 static int __init cpufreq_smartass_init(void)
 {
 	unsigned int i;
@@ -968,6 +979,6 @@ static void __exit cpufreq_smartass_exit(void)
 
 module_exit(cpufreq_smartass_exit);
 
-/*MODULE_AUTHOR ("Erasmux, moded by H3ROS & C3C0");
+MODULE_AUTHOR ("Erasmux, moded by H3ROS & C3C0");
 MODULE_DESCRIPTION ("'cpufreq_smartassH3' - A smart cpufreq governor");
-MODULE_LICENSE ("GPL");*/
+MODULE_LICENSE ("GPL");

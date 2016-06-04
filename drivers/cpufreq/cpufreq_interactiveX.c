@@ -30,11 +30,13 @@
 #include <linux/kthread.h>
 #include <linux/mutex.h>
 #include <linux/earlysuspend.h>
+#include <linux/powersuspend.h>
 #include <asm/cputime.h>
 #include <linux/sched/rt.h>
 #include <linux/module.h>
 
 static atomic_t active_count = ATOMIC_INIT(0);
+//Unused-remove by abhishekr700
 //static unsigned long stored_timer_rate;
 
 struct cpufreq_interactivex_cpuinfo {
@@ -67,6 +69,8 @@ static struct mutex set_speed_lock;
 // used for suspend code
 static unsigned int enabled = 0;
 static unsigned int registration = 0;
+
+//Unused-remove by abhishekr700
 //static unsigned int suspendfreq = 648000;
 
 /* Hi speed to bump to from lo speed when load burst (default max) */
@@ -544,6 +548,7 @@ static struct attribute_group interactivex_attr_group = {
 	.name = "interactivex",
 };
 
+//Unused-remove by abhishekr700
 /*static void __cpuinit interactivex_suspend(int suspend)
 {
         unsigned int cpu;
@@ -576,24 +581,29 @@ static struct attribute_group interactivex_attr_group = {
 		mutex_unlock(&set_speed_lock);
                 pr_info("[imoseyon] interactivex suspended cpu1 down\n");
 	  }
-}*/
+}
+*/
+
+//Unused-remove by abhishekr700
 /*static void __cold interactivex_early_suspend(struct early_suspend *handler) {
      stored_timer_rate = timer_rate;
      timer_rate = DEFAULT_TIMER_RATE * 10;
      if (!registration) interactivex_suspend(1);
-}
+}*/
 
-static void __cold interactivex_late_resume(struct early_suspend *handler) {
+//Unused-remove by abhishekr700
+/*static void __cold interactivex_late_resume(struct early_suspend *handler) {
      interactivex_suspend(0);
      timer_rate = stored_timer_rate;
-}
+}*/
 
-static struct early_suspend interactivex_power_suspend = {
+//Unused-remove by abhishekr700
+/*static struct early_suspend interactivex_power_suspend = {
         .suspend = interactivex_early_suspend,
         .resume = interactivex_late_resume,
         .level = EARLY_SUSPEND_LEVEL_DISABLE_FB + 1,
-};
-*/
+};*/
+
 static int cpufreq_governor_interactivex(struct cpufreq_policy *policy,
 		unsigned int event)
 {
