@@ -20,6 +20,7 @@
 #include <asm/io.h>
 #include <linux/export.h>
 #include <linux/slab.h>
+#include <linux/earlysuspend.h>
 //extern int g_user_dbg_mode;
 
 #include <linux/rtc.h>
