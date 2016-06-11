@@ -1251,7 +1251,7 @@ int msm8x16_wcd_write(struct snd_soc_codec *codec, unsigned int reg,
 			     unsigned int value)
 {
 	int ret;
-ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
+#ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
 int val;
 #endif
 	struct msm8x16_wcd_priv *msm8x16_wcd = snd_soc_codec_get_drvdata(codec);
@@ -1340,7 +1340,6 @@ unsigned int msm8x16_wcd_read(struct snd_soc_codec *codec,
 #ifdef CONFIG_SOUND_CONTROL_HAX_3_GPL
 EXPORT_SYMBOL(msm8x16_wcd_read);
 #endif
->>>>>>> 17e945f... Sound Control-Minor Edit
 
 static void msm8x16_wcd_boost_on(struct snd_soc_codec *codec)
 {
