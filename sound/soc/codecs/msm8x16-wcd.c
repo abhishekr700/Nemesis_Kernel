@@ -5595,7 +5595,6 @@ static void remove_codec_status_proc_file(void)
 	remove_proc_entry(CODEC_STATUS_PROC_FIRE,&proc_root);
 }
 #endif /* #ifdef CONFIG_PROC_FS */
->>>>>>> 2538abe... Revert "ASoC: wcd: Remove ASUS debug"
 
 static int msm8x16_wcd_codec_probe(struct snd_soc_codec *codec)
 {
