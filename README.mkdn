@@ -14,5 +14,6 @@
 
 ####Developer            :       abhishekr700(xda/gmail)
 
-https://codeship.com/projects/31b3ed70-1441-0134-bf7d-1ae9bff528ab/status?branch=master
+                                      AUTO-KERNEL BUILDER STATUS
+  ![Alt text](https://codeship.com/projects/31b3ed70-1441-0134-bf7d-1ae9bff528ab/status?branch=master "Optional title")
 
