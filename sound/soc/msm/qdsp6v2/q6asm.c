@@ -4993,10 +4993,6 @@ int q6asm_read_nolock(struct audio_client *ac)
 			}
 		}
 
-		port->dsp_buf = q6asm_get_next_buf(port->dsp_buf,
-						   port->max_buf_cnt);
-		dev_vdbg(ac->dev, "%s: buf add[%pa] token[%d] uid[%d]\n",
-
 		port->dsp_buf = (port->dsp_buf + 1) & (port->max_buf_cnt - 1);
 		dev_vdbg(ac->dev, "%s: buf add[%pK] token[%d] uid[%d]\n",
 				__func__, &ab->phys, read.hdr.token,
