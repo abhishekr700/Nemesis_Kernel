@@ -31,7 +31,7 @@ lost in the noise of a mailing list that gets 1000+ emails a day.
 Instead, try to figure out which kernel subsystem is causing the issue,
 and email that subsystem's maintainer and mailing list.  If the subsystem
 maintainer doesn't answer, then expand your scope to mailing lists like
-LKML.
+LKML. 
 
 
 Identify who to notify
